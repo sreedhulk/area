@@ -1,0 +1,79 @@
+package experiment;
+import java.util.*;
+
+public class Overload {
+    public double area(int r) {
+        double s;
+        s = 3.14 * r * r;
+        return s;
+    }
+
+    public double area(int l, int b) {
+        double s;
+        s = l * b;
+        return s;
+    }
+
+    public double area(int a, int b, int c) {
+        double s, m;
+        s = (a + b + c) / 2.0;  
+        m = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        return m;
+    }
+
+    public static void main(String[] args) {
+        int a,x=0;
+        Overload ob = new Overload();
+        System.out.println("\nFINDING AREA\n");
+        Scanner sc = new Scanner(System.in);
+        while(x!=1) {
+        System.out.println("1: circle\n2: triangle\n3: rectangle\n4:exit\n");
+        System.out.println("enter your choice\n");
+        a = sc.nextInt();
+      
+        switch (a) {
+            case 1: {
+                System.out.println("AREA OF CIRCLE\n");
+                System.out.println("enter the radius\n");
+                int r = sc.nextInt();
+                double m = ob.area(r);
+                System.out.println("Area: " + m);
+                break;
+            }
+            case 2: {
+                System.out.println("AREA OF TRIANGLE\n");
+                System.out.println("enter the sides\n");
+                int n = sc.nextInt();
+                int b = sc.nextInt();
+                int c = sc.nextInt();
+                double m = ob.area(n, b, c);
+                System.out.println("Area: " + m);
+                break;
+            }
+            case 3: {
+                System.out.println("AREA OF RECTANGLE\n");
+                System.out.println("enter the length\n");
+                int l = sc.nextInt();
+                System.out.println("enter the breadth\n");
+                int b = sc.nextInt();
+                double m = ob.area(l, b);
+                System.out.println("Area: " + m);
+                break;
+            }
+            case 4:{
+            	x=1;
+            	System.out.println("end of program");
+            	break;
+            }
+            
+            
+            default: {
+                System.out.println("Wrong choice\n");
+                break;
+            }
+        }
+         
+    }
+}
+}
+
